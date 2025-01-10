@@ -1,4 +1,3 @@
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from prediction.apps import PredictionConfig
@@ -6,7 +5,6 @@ import pandas as pd
 
 # Create your views here.
 # Class based view to predict based on IRIS model
-@api_view()
 class IRIS_Model_Predict(APIView):
     def post(self, request, format=None):
         features = self.extract_features(request.data)
